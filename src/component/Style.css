@@ -292,9 +292,7 @@ label:hover:before {
     font-size: .5rem;
     color:red;
 }
-/* .invalid{
-    border-bottom:2px solid red;    
-} */
+
 .homePage{
     text-align:center;
     align-items: center;
@@ -316,10 +314,6 @@ label:hover:before {
 }
 .Footer{
     color:rgb(209, 179, 167);
-}
-.footerForStyling{
-  
-   
 }
 .FooterforCopyright{
     height:50px;
