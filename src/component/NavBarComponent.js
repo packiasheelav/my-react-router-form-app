@@ -18,18 +18,12 @@ const NavBarComponent = (props) => {
       <Router basename={process.env.PUBLIC_URL}>
         <div className="container">
         <ul className="header">
-        
-        
-        
-        
-        {{ pathname: '/Display', hash: window.location.hash}}
 
-
-               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/Home', hash: window.location.hash}}>Home</NavLink></li>
-               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/Personal_Information', hash: window.location.hash}}>Personal Information</NavLink></li>
-               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/SkillsLocation', hash: window.location.hash}}>Skills&Location</NavLink></li>
-               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/Portfolio', hash: window.location.hash}}>Portfolio</NavLink></li>
-               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/Display', hash: window.location.hash}}>Display Data</NavLink></li>
+               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/Home' , hash: window.location.hash}}>Home</NavLink></li>
+               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/Personal_Information' , hash: window.location.hash}}>Personal Information</NavLink></li>
+               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/SkillsLocation' , hash: window.location.hash}}>Skills&Location</NavLink></li>
+               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/Portfolio' , hash: window.location.hash}}>Portfolio</NavLink></li>
+               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/Display' , hash: window.location.hash}}>Display Data</NavLink></li>
 
            </ul>          
             <Switch>
