@@ -15,20 +15,27 @@ import {
 const NavBarComponent = (props) => {
   return (
     <div >
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="container">
         <ul className="header">
-               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to="/Home">Home</NavLink></li>
-               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to="/Personal_Information">Personal Information</NavLink></li>
-               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to="/Skills&Location">Skills&Location</NavLink></li>
-               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to="/Portfolio">Portfolio</NavLink></li>
-               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to="/Display">Display Data</NavLink></li>
+        
+        
+        
+        
+        {{ pathname: '/Display', hash: window.location.hash}}
+
+
+               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/Home', hash: window.location.hash}}>Home</NavLink></li>
+               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/Personal_Information', hash: window.location.hash}}>Personal Information</NavLink></li>
+               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/SkillsLocation', hash: window.location.hash}}>Skills&Location</NavLink></li>
+               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/Portfolio', hash: window.location.hash}}>Portfolio</NavLink></li>
+               <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to={{ pathname: '/Display', hash: window.location.hash}}>Display Data</NavLink></li>
 
            </ul>          
             <Switch>
             <Route exact path={process.env.PUBLIC_URL + '/Home'} render={()=>(<Home data={props.data} change={props.change} handleSubmit={props.handleSubmit} validate={props.validate} handleBlurEvent={props.handleBlurEvent}/>)}/>
             <Route exact path={process.env.PUBLIC_URL + '/Personal_Information'} render={()=>(<PersonalInfo data={props.data} change={props.change} validate={props.validate} handleBlurEvent={props.handleBlurEvent}/>)}/>
-            <Route exact path={process.env.PUBLIC_URL + '/Skills&Location'} render={()=>(<SkillsLocation data={props.data} change={props.change} validate={props.validate} handleCheckBox={props.handleCheckBox}/> )}/>
+            <Route exact path={process.env.PUBLIC_URL + '/SkillsLocation'} render={()=>(<SkillsLocation data={props.data} change={props.change} validate={props.validate} handleCheckBox={props.handleCheckBox}/> )}/>
             <Route exact path={process.env.PUBLIC_URL + '/Portfolio'} render={()=>(<Portfolio data={props.data} change={props.change} validate={props.validate} handleBlurEvent={props.handleBlurEvent}/>)} />
             <Route exact path={process.env.PUBLIC_URL + '/Display'} render={()=>(<Display data={props.data} displayMessage={props.displayMessage}/>)} />
           </Switch>
