@@ -7,6 +7,7 @@ import Display from './Display';
   
 import {
   BrowserRouter as Router,
+  HashRouter,
   NavLink,
   Route,
   Switch,
@@ -15,7 +16,7 @@ import {
 const NavBarComponent = (props) => {
   return (
     <div >
-      <Router basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <div className="container">
         <ul className="header">
 
@@ -27,14 +28,14 @@ const NavBarComponent = (props) => {
 
            </ul>          
             <Switch>
-            <Route exact path={process.env.PUBLIC_URL + '/Home'} render={()=>(<Home data={props.data} change={props.change} handleSubmit={props.handleSubmit} validate={props.validate} handleBlurEvent={props.handleBlurEvent}/>)}/>
-            <Route exact path={process.env.PUBLIC_URL + '/Personal_Information'} render={()=>(<PersonalInfo data={props.data} change={props.change} validate={props.validate} handleBlurEvent={props.handleBlurEvent}/>)}/>
-            <Route exact path={process.env.PUBLIC_URL + '/SkillsLocation'} render={()=>(<SkillsLocation data={props.data} change={props.change} validate={props.validate} handleCheckBox={props.handleCheckBox}/> )}/>
-            <Route exact path={process.env.PUBLIC_URL + '/Portfolio'} render={()=>(<Portfolio data={props.data} change={props.change} validate={props.validate} handleBlurEvent={props.handleBlurEvent}/>)} />
-            <Route exact path={process.env.PUBLIC_URL + '/Display'} render={()=>(<Display data={props.data} displayMessage={props.displayMessage}/>)} />
+            <Route exact path='/Home' render={()=>(<Home data={props.data} change={props.change} handleSubmit={props.handleSubmit} validate={props.validate} handleBlurEvent={props.handleBlurEvent}/>)}/>
+            <Route exact path='/Personal_Information' render={()=>(<PersonalInfo data={props.data} change={props.change} validate={props.validate} handleBlurEvent={props.handleBlurEvent}/>)}/>
+            <Route exact path='/SkillsLocation' render={()=>(<SkillsLocation data={props.data} change={props.change} validate={props.validate} handleCheckBox={props.handleCheckBox}/> )}/>
+            <Route exact path='/Portfolio' render={()=>(<Portfolio data={props.data} change={props.change} validate={props.validate} handleBlurEvent={props.handleBlurEvent}/>)} />
+            <Route exact path= '/Display' render={()=>(<Display data={props.data} displayMessage={props.displayMessage}/>)} />
           </Switch>
         </div>
-      </Router>
+      </HashRouter>
     </div>
   );
 };
